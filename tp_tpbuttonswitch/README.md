@@ -26,10 +26,13 @@ I run my TP with arch linux - yea, this means systemd!! POETTERIIING!!!1elf - an
 ThinkVantage Button
 -------------------
 
-I have some modules for thinkpad foo installed (unfortunately I forgot which).
-I use acpid to handle the ThinkVantage button press.
+I have some modules for thinkpad foo installed (unfortunately I forgot which). I use acpid to handle the ThinkVantage button press.
 
-/sys/devices/platform/thinkpad_acpi contains the mask for the thinkpad keys. The following bit has to be set to enable ThinkVantage button press: 0x00800000 (do something like this: $oldval & 0x00800000 > $devfile)
+/sys/devices/platform/thinkpad_acpi/hotkey_mask contains the mask for the thinkpad keys. The following bit has to be set to enable ThinkVantage button press: 0x00800000 (do something like this: $oldval & 0x00800000 > $devfile)
+Here is a perl script to set this value:
+perl -e 'printf "%#x", '$(< hotkey_mask)' | 0x00800000,'> hotkey_mask
+
+Important: It seems this has to be set not only on each boot but even on each resume of a suspend!
 
 
 Lid-closing event

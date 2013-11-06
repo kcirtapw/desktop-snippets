@@ -1,0 +1,2 @@
+event=button/prog1
+action=/etc/acpi/thinkbutton.sh

@@ -34,6 +34,9 @@ perl -e 'printf "%#x", '$(< hotkey_mask)' | 0x00800000,'> hotkey_mask
 
 Important: It seems this has to be set not only on each boot but even on each resume of a suspend!
 
+Note: Maybe the correct mask varies on different thinkpad models. One easy way to find out is watching acpi_listen and pressing the desired button while playing with the 
+bitmask in hotkey_mask
+
 
 Lid-closing event
 -----------------

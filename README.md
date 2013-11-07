@@ -1,4 +1,4 @@
-desktop-snipets
+desktop-snippets
 ===============
 
-a likely bad maintained repository of small scripts and snipets for desktop/workstation environments
+a likely bad maintained repository of small scripts and snippets for desktop/workstation environments

@@ -8,7 +8,7 @@ if [ $# -eq 1 -a -d "$1" ]; then
 	DIRMODE=1
 fi
 
-SHAREKEY=$(pwgen 16 1)
+SHAREKEY=$(mktemp --dry-run XXXXXXXXXXXXXXXX)
 
 SFTPCOMMANDS="cd $SFTP_CDPATH\nmkdir $SHAREKEY\ncd $SHAREKEY"
 for file in "$@"; do

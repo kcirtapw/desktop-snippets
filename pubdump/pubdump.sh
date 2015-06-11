@@ -12,7 +12,7 @@ SHAREKEY=$(mktemp --dry-run XXXXXXXXXXXXXXXX)
 
 SFTPCOMMANDS="cd $SFTP_CDPATH\nmkdir $SHAREKEY\ncd $SHAREKEY"
 for file in "$@"; do
-	SFTPCOMMANDS+="\nput $file"
+	SFTPCOMMANDS+="\nput \"$file\""
 done
 
 echo -e $SFTPCOMMANDS | sftp $SFTP_TARGET
